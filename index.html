@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpiGen - Football Opinion Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OpiGen - Football Opinion Generator</h1>
+            <div class="header-buttons">
+                <button id="menuToggle">Menu</button>
+                <button id="darkModeToggle">Toggle Dark Mode</button>
+            </div>
+        </header>
+        <main>
+            <div class="search-box">
+                <input type="number" id="opinionNumber" placeholder="Enter a number (1-1000) for a football opinion" aria-label="Enter opinion number">
+                <button id="generateButton">Generate Opinion</button>
+            </div>
+            <div class="opinion-display" id="opinionDisplay"></div>
+        </main>
+        <footer>
+            <p>Created by Raziv</p>
+        </footer>
+    </div>
+
+    <div class="sidebar" id="sidebar" role="navigation">
+        <button id="closeSidebar">Close</button>
+        <nav>
+            <ul>
+                <li><a href="#" id="registerLink">Register</a></li>
+                <li><a href="#credits" id="creditsLink">Credits</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="submitOpinionsLink">Submit Opinions</a></li>
+                <li><a href="#" id="contributorsLink">Top Contributors</a></li> <!-- Link to contributors -->
+            </ul>
+        </nav>
+        <div id="contributorsSection" style="display: none;">
+            <h3>Top Contributors</h3>
+            <ul id="contributorsList"></ul>
+        </div>
+    </div>
+
+    <div class="small-sidebar" id="submitOpinionsSidebar" role="dialog" aria-labelledby="submitOpinionsTitle">
+        <button id="closeSubmitOpinionsSidebar">Close</button>
+        <h2 id="submitOpinionsTitle">Submit Your Opinion</h2>
+        <form id="submitOpinionForm">
+            <label for="contributorName">Your Name:</label>
+            <input type="text" id="contributorName" required aria-label="Your name">
+            <label for="opinionInput">Your Opinion:</label>
+            <textarea id="opinionInput" required maxlength="250" aria-label="Your opinion"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="submissionFeedback" aria-live="polite"></div> <!-- Feedback message -->
+    </div>
+
+    <div class="small-sidebar" id="smallSidebar" role="dialog" aria-labelledby="registerTitle">
+        <button id="closeSmallSidebar">Close</button>
+        <h2 id="registerTitle">Register</h2>
+        <form id="registrationForm">
+            <label for="preferredName">Preferred Name:</label>
+            <input type="text" id="preferredName" required aria-label="Preferred name">
+            <label for="favoritePlayer">Favorite Player:</label>
+            <input type="text" id="favoritePlayer" required aria-label="Favorite player">
+            <label for="favoriteClub">Favorite Club:</label>
+            <input type="text" id="favoriteClub" required aria-label="Favorite club">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="credits-sidebar" id="creditsSidebar" role="dialog" aria-labelledby="creditsTitle">
+        <button id="closeCreditsSidebar">Close</button>
+        <h2 id="creditsTitle">Credits</h2>
+        <p>Created by Raziv</p>
+        <p>Special Mention: Anwar</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
